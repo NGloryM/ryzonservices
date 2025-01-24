@@ -1,0 +1,1213 @@
+/* Algemene instellingen */
+body {
+    background-color: #121212;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    animation: fadeIn 1s ease-in-out; /* Pagina fade-in bij laden */
+}
+
+/* Basisstijl voor de header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem; /* Hoogte iets verkleind */
+    background-image: linear-gradient(145deg, #2c2c2c, #3b3b3b);
+    box-shadow: 0 7px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth transform */
+    position: sticky;
+    top: 10px; /* Zorgt ervoor dat de header vast blijft aan de bovenkant */
+    z-index: 1000; /* Zorgt ervoor dat de header boven andere elementen blijft */
+}
+
+/* Hover effect voor de header */
+header:hover {
+    transform: translateY(-3px); /* Subtielere beweging voor de header */
+}
+
+/* Stijl voor het logo en de logo-container */
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+header .logo-img {
+    height: 45px;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease; /* Subtiele hover-anime voor logo */
+}
+
+header .logo-img:hover {
+    transform: rotate(-10deg) scale(1.1); /* Logo roteren zoals eerder en vergroten */
+}
+
+header h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header .nav-button {
+    margin: 0 1.3rem;
+    text-decoration: none;
+    color: #1e90ff; /* Levendige kleur voor tekst */
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700; /* Vetgedrukt lettertype */
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 2px solid #1e90ff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow; /* Voor betere prestaties bij animaties */
+}
+
+header .nav-button:hover {
+    background-color: #1e90ff; /* Achtergrondkleur veranderen bij hover */
+    color: #fff; /* Witte tekst bij hover */
+    transform: scale(1.1); /* Vergroten bij hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Subtiele schaduw bij hover */
+}
+
+header .nav-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-45deg);
+    transition: all 0.3s ease;
+}
+
+header .nav-button:hover:before {
+    left: 100%;
+}
+
+header .divider {
+    height: 3px;
+    width: 35px;
+    background-color: #6c63ff;
+    margin: 0 1.5rem;
+    transition: width 0.3s ease;
+}
+
+header .divider:hover {
+    width: 80px;
+}
+
+header .discord-icon {
+    font-size: 1.6rem;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header .discord-icon:hover {
+    color: #6c63ff;
+    transform: scale(1.2);
+}
+
+header .discord-icon:active {
+    transform: scale(1.1);
+}
+
+/* Sticky header bij scrollen */
+header.sticky {
+    animation: slideDown 0.5s ease-in-out;
+}
+
+/* Animatie voor de sticky header */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Media queries voor kleine schermen */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 10%;
+    }
+
+    header .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    header .nav-button {
+        margin: 0.5rem 0;
+        font-size: 0.9rem; /* Verminder de lettergrootte voor knoppen op kleinere schermen */
+        padding: 0.4rem 0.8rem; /* Kleinere padding voor knoppen */
+    }
+
+    header .divider {
+        display: none;
+    }
+}
+
+/* Keyframe animaties */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Algemene stijl voor de info sectie */
+.intro {
+    padding: 1.8rem 1.5rem; /* Ruimte boven de sectie */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto; /* Zorg ervoor dat de sectie niet te hoog is */
+    color: white;
+    position: relative;
+}
+
+.intro-content {
+    max-width: 800px; /* Beperk de breedte voor een mooie uitlijning */
+    width: 100%;
+}
+
+/* Stijl voor de afbeelding boven de titel */
+.intro-image {
+    width: 100%; /* Zorg ervoor dat de afbeelding de breedte van de sectie volgt */
+    max-width: 500px; /* Limiteer de breedte voor een nette uitstraling */
+    margin-top: 0.5rem; /* Verminder de ruimte boven de afbeelding */
+    margin-bottom: 0; /* Verwijder de ruimte onder de afbeelding */
+    border-radius: 10px; /* Zachte randen voor een modern effect */
+    object-fit: cover; /* Zorg ervoor dat de afbeelding niet vervormt */
+    transition: transform 0.3s ease; /* Maak de animatie voor hover soepeler */
+}
+
+.intro-image:hover {
+    transform: scale(1.05); /* Vergroot de afbeelding licht bij hover */
+}
+
+/* Titel styling */
+.intro-title {
+    font-size: 2rem; /* Kleinere titel */
+    font-weight: 700;
+    color: #6c63ff; /* Paarse kleur voor de titel */
+    margin-bottom: 0.5rem; /* Verminder de ruimte onder de titel */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtiele schaduw voor extra effect */
+}
+
+/* Beschrijving styling */
+.intro-description {
+    font-size: 1.125rem; /* Kleinere beschrijving */
+    color: #ffffff; /* Witte tekst voor de beschrijving */
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-top: 1.5rem;
+}
+
+/* Subtiele animatie bij het laden van de intro */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Divider sectie */
+.divider {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    color: white;
+}
+
+/* Keyframe animatie */
+@keyframes chevronMove {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Pijl gaat omhoog */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.divider-chevron-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Zorgt ervoor dat de chevrons boven de tekst zweven */
+    position: relative;
+    z-index: 2; /* Zorg ervoor dat de chevrons boven de lijnen en tekst staan */
+}
+
+.divider-chevron {
+    font-size: 2.5rem; /* Maak de chevrons groter voor duidelijkheid */
+    color: #6c63ff; /* Grijze kleur voor de chevrons */
+    animation: chevronMove 1.5s ease-in-out infinite; /* Animatie toevoegen */
+}
+
+
+
+
+/* Lijnen */
+.divider-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Lange lijnen aan de zijkanten */
+.divider-line-left, .divider-line-right {
+    width: 400px;
+    height: 1px;
+    background-color: #6c63ff; /* Grijze kleur voor de lijnen */
+}
+
+/* Tekst in het midden */
+.divider-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    position: relative;
+    background-color: #6c63ff; /* Grijze achtergrondkleur */
+    border-radius: 5px;
+    margin: 0 20px;
+    z-index: 1;
+    top: -5px; /* Tekst iets omhoog plaatsen */
+}
+
+/* Responsieve aanpassingen */
+@media (max-width: 768px) {
+    .divider-line-left, .divider-line-right {
+        width: 150px; /* Kortere lijnen op mobiele schermen */
+    }
+
+    .divider-text {
+        font-size: 1.25rem;
+        padding: 0 10px;
+    }
+
+    .divider-chevron {
+        font-size: 1.5rem; /* Kleinere chevron op mobiele schermen */
+    }
+}
+
+/* Algemene instellingen voor de info-sectie */
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.8rem 1.3rem;
+    background: #121212; /* Donkere achtergrond voor focus op content */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Stijl voor de afbeelding (kleiner gemaakt) */
+.info-image img {
+    width: 100%;
+    max-width: 575px; /* Kleinere afbeelding */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-top: -1rem; /* Verhoog de afbeelding verder */
+    transition: transform 0.3s ease; /* Animatie bij hover */
+}
+
+/* Hover effect voor de afbeelding (vergroot bij hover) */
+.info-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Stijl voor de contentcontainer */
+.info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    max-width: 720px;
+    flex-grow: 1;
+    padding: 2rem;
+    background-image: linear-gradient(145deg, #2c2c2c, #3b3b3b);
+    border-radius: 8px; /* Ronde hoeken voor het vak */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schaduw voor diepte-effect */
+    opacity: 0; /* Zorgt ervoor dat het tekstvak niet zichtbaar is bij het laden */
+    transform: translateY(20px); /* Start met een lagere positie */
+    animation: fadeInUp 1s ease-out forwards; /* Fade-in en omhoog animatie */
+}
+
+/* Fade-in en omhoog animatie */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Begin vanuit een lagere positie */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Beëindig in de normale positie */
+    }
+}
+
+/* Titel styling */
+.info-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6c63ff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #6c63ff; /* Oranjerode rand */
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Aanzienlijkere schaduw */
+}
+
+/* Subtitel styling */
+.info-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Beschrijving styling */
+.info-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 0;
+}
+
+/* De knoppen in de info-sectie */
+.specific-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Algemene knopstijl - rechthoekig en subtiel */
+.specific-button {
+    background-color: transparent;
+    border: 2px solid #ff4500; /* Levendige oranje rand voor knoppen */
+    color: #ff4500; /* Levendige kleur voor tekst */
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 700; /* Vetgedrukt lettertype */
+    border-radius: 4px; /* Kleine afronding voor een moderne uitstraling */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease; /* Subtiele animatie bij hover */
+    opacity: 0.9; /* Maak de knop minder doorzichtig */
+}
+
+.specific-button:hover {
+    background-color: #ff4500; /* Achtergrondkleur veranderen bij hover */
+    color: #fff; /* Witte tekst bij hover */
+    transform: translateY(-3px); /* Lichte verschuiving bij hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtiele schaduw bij hover */
+}
+
+/* Knop voor V-Bucks - Hover effect */
+.specific-button.vbucks:hover {
+    background-color: #ff7f50; /* Oranje achtergrond bij hover */
+    color: #fff; /* Zwarte tekstkleur bij hover */
+}
+
+/* Knop voor FN Gifts - Hover effect */
+.specific-button.fn-gifts:hover {
+    background-color: #1e90ff; /* Blauw voor FN Gifts */
+    color: #fff; /* Zwarte tekstkleur bij hover */
+}
+
+/* Knop voor V-Bucks */
+.specific-button.vbucks {
+    border-color: #ff6347; /* Tomatenrood voor V-Bucks */
+    color: #ff6347;
+}
+
+/* Knop voor FN Gifts */
+.specific-button.fn-gifts {
+    border-color: #1e90ff; /* Dodger blauw voor FN Gifts */
+    color: #1e90ff;
+}
+
+/* Responsief ontwerp voor knoppen op mobiele apparaten */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .info-image {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .info-title {
+        font-size: 1.25rem;
+    }
+
+    .info-description {
+        font-size: 0.85rem;
+    }
+
+    .specific-buttons {
+        flex-direction: column;
+        gap: 1rem; /* Zorgt ervoor dat de knoppen onder elkaar staan */
+    }
+
+    .specific-button {
+        padding: 0.7rem 1.6rem;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vbucks-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+}
+
+.vbucks-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a); /* Gradient background for more depth */
+    border-radius: 20px; /* Smoother rounded corners */
+    width: 300px; /* Slightly wider cards */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* More pronounced shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    height: auto;
+}
+
+.vbucks-card:hover {
+    transform: translateY(-10px); /* Hover effect to lift the card */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.vbucks-card-img {
+    width: 100%;
+    height: auto; /* Ensures the entire image is visible */
+    object-fit: contain; /* Adjusts the image to fit without cropping */
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid #1e90ff; /* Adds a border below the image for a sleek look */
+}
+
+.vbucks-card-img:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.vbucks-card-title {
+    font-size: 1.5rem; /* Slightly larger font */
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
+}
+
+.vbucks-description {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin: 1rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+    border-top: 1px solid #334155; /* Divider between title and description */
+    padding-top: 1rem;
+}
+
+.vbucks-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1e90ff;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Slight glow effect */
+}
+
+.specific-button.buy {
+    border: 2px solid #1e90ff; /* Slightly thicker border */
+    color: #1e90ff;
+    background-color: transparent; /* Transparent background for modern look */
+    padding: 0.6rem 1.2rem; /* Reduced padding for more balanced size */
+    font-size: 1rem; /* Normal font size for better readability */
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px; /* Rounded button with moderate radius */
+    position: relative; /* Keeps the icon and button positioning intact */
+    overflow: hidden;
+    display: flex; /* Flexbox for proper alignment */
+    align-items: center;
+    justify-content: center; /* Centers the icon within the button */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+    margin-bottom: 1rem; /* Keeps good spacing below the button */
+}
+
+.specific-button.buy:hover {
+    background-color: #1e90ff; /* Background color changes on hover */
+    color: #ffffff; /* Icon and text change to white */
+    transform: translateY(-3px); /* Slight movement on hover */
+    cursor: pointer;
+}
+
+.specific-button.buy i {
+    position: relative; /* Keeps the icon's position static relative to the button */
+    transform: none; /* Icon remains in its original position */
+    transition: none; /* No transition for the icon */
+    font-size: 1.1rem; /* Smaller icon size to match the reduced button size */
+}
+
+@media (max-width: 768px) {
+    .vbucks-card {
+        width: 90%; /* Make cards responsive on smaller screens */
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Centered Container */
+.gift-form-container {
+    max-width: 500px;
+    background-color: #151e30;
+    border-radius: 16px;
+    padding: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 50px auto; /* Centered on the page */
+}
+
+/* Image Styling */
+.gift-image {
+    margin-bottom: 20px;
+}
+
+.gift-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Form Field Wrapper */
+.form-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 14px 12px; /* Keep consistent padding */
+    font-size: 1rem;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #3c3c50;
+    background-color: #33334d;
+    color: #f0f0f5;
+    transition: all 0.3s ease;
+}
+
+/* Input Fields Focus */
+.input-field:focus {
+    outline: none;
+    border-color: #4d80e4;
+    box-shadow: 0 0 5px rgba(77, 128, 228, 0.7); /* Subtle shadow */
+}
+
+/* Labels - Positioned inside the field by default */
+.input-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem; /* Keep the same font size for better consistency */
+    font-weight: 600;
+    color: #e0e0e0;
+    pointer-events: none;
+    transition: all 0.3s ease; /* Smooth transition for movement */
+    opacity: 0; /* Start hidden */
+}
+
+/* When the input field is focused or filled, the label moves above */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: -10px; /* Slightly closer to the input field */
+    font-size: 0.875rem; /* Slightly smaller font size for the label */
+    color: #4d80e4; /* Label color change */
+    opacity: 1; /* Make the label visible */
+}
+
+/* Ensure the placeholder text disappears when the label is shown */
+.input-field:not(:focus):not(:placeholder-shown) {
+    padding-top: 14px; /* Keep the padding the same to avoid field growing */
+}
+
+/* Add Button (Smaller and Positioned Next to Input) */
+.add-btn {
+    background-color: transparent;
+    border: 2px solid #1E90FF; /* Blue border */
+    color: #1E90FF; /* Blue color */
+    padding: 5px 12px; /* Smaller padding for a smaller button */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px; /* Smaller icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: auto; /* Don't stretch to full width */
+}
+
+.add-btn i {
+    font-size: 18px; /* Slightly smaller icon */
+}
+
+/* Add Button Hover Effect */
+.add-btn:hover {
+    background-color: #1E90FF; /* Background turns blue */
+    color: #fff; /* Text/icon turns white */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* V-Bucks Input with Custom Buttons */
+.vbucks-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.arrow-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #4d80e4;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #3a70c3;
+}
+
+/* Price Display */
+.price-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1e90ff;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Slight glow effect */
+}
+
+
+/* Checkbox container for alignment */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide the checkbox input */
+.checkbox {
+    display: none;
+}
+
+/* Style the label to display the icon */
+.checkbox-label {
+    cursor: pointer;
+    font-size: 20px; /* Slightly larger font size */
+    color: #ccc; /* Default unchecked state color */
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling and moving */
+}
+
+/* When the checkbox is checked, style the icon */
+.checkbox:checked + .checkbox-label #checkbox-icon {
+    color: #4d80e4; /* Checked color */
+    transform: none; /* Prevent the icon from growing */
+    transition: color 0.3s ease, transform 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+#checkbox-icon {
+    font-size: 22px;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease-in-out;
+    transform: scale(1); /* Reset scale */
+}
+
+.checkbox:checked + .checkbox-label #checkbox-icon {
+    transform: scale(1.2); /* Slight scaling effect when checked */
+}
+
+/* Checked icon behavior (when the checkbox is checked) */
+.checkbox:checked + .checkbox-label .fa-circle {
+    opacity: 0; /* Hide the unchecked icon */
+}
+
+.checkbox:checked + .checkbox-label .fa-check-circle {
+    opacity: 1; /* Show the checked icon */
+}
+
+#notification-container {
+    position: fixed;
+    top: 20px; /* Adjust distance from the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    z-index: 9999;
+    width: auto; /* Allow dynamic width based on content */
+    max-width: 90%; /* Optional: Limit maximum width */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-10px); /* Start slightly off-screen */
+        opacity: 0; /* Invisible initially */
+    }
+    100% {
+        transform: translateY(0); /* Slide to original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0); /* Keep at original position */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translateY(-10px); /* Slide slightly off-screen */
+        opacity: 0; /* Fade out */
+    }
+}
+
+.notification {
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start as invisible */
+    transform: translateY(-10px); /* Start off-screen */
+    animation: slideIn 0.3s ease-out forwards; /* Slide in when added */
+    text-align: center; /* Center-align text */
+}
+
+.notification.success {
+    background-color: #4CAF50; /* Green for success */
+}
+
+.notification.error {
+    background-color: #ff4444; /* Red for errors */
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
+}
+
+.notification.fadeOut {
+    animation: slideOut 0.3s ease-out forwards; /* Slide out when removed */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        top: calc(var(--initial-top) + 10px);
+    }
+    100% {
+        top: var(--new-top);
+    }
+}
+
+/* Action Buttons */
+.action-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4d80e4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.action-button:hover:not(:disabled) {
+    background-color: #3a70c3;
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Add New Gift Button */
+.add-gift-btn {
+    background-color: #28a745;
+}
+
+.add-gift-btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+
+
+.divider-line-left, .divider-line-right {
+    flex: 1;
+    height: 2px;
+    background-color: #3c3c50;
+}
+
+.divider-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #e8e8ff;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gift-form-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .arrow-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Overlay Content */
+.overlay-content {
+    background: #151e30;
+    border-radius: 16px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.4s ease-out;
+    position: relative;
+}
+
+/* Methode Opties */
+.method-option {
+    margin-bottom: 20px;
+    background-color: #1e2a37;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Method header */
+.method-header {
+    padding: 15px;
+    background-color: #243547;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.method-header:hover {
+    background-color: #1e2a37;
+}
+
+.method-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.5s ease-out;
+}
+
+/* FontAwesome Pijl (Chevron) */
+.chevron {
+    font-size: 20px;
+    color: white;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg); /* Default state */
+}
+
+/* Pijl draait bij het openen van de beschrijving */
+.method-description.show ~ .method-header .chevron {
+    transform: rotate(180deg);
+}
+
+/* Beschrijving (methoden) */
+.method-description {
+    padding: 10px 20px;
+    background-color: #2a3a53;
+    color: #e3e3e3;
+    font-size: 16px;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+    transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+/* Beschrijving wordt zichtbaar met fade-in en slide-down effect */
+.method-description.show {
+    display: block;
+    max-height: 500px; /* Allow enough space for the content */
+    opacity: 1;
+    padding: 20px;  /* Adjust padding when opened */
+}
+
+/* Animatie van de overlay */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Knop stijlen */
+.methoden {
+    background-color: transparent;
+    color: #007bff;
+    font-size: 18px;
+    padding: 18px 40px;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    width: 750px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.methoden:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.methoden:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.6);
+}
+
+.methods-section {
+    padding: 40px;
+    background-color: #f4f4f4;
+    border-top: 2px solid #007bff;
+    margin-top: 40px;
+    display: none;
+}

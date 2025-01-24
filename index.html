@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryzon Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/" class="logo">
+                <img src="https://i.imgur.com/U0CQ0XN.png" alt="Ryzon Services Logo" class="logo-img" loading="lazy">
+                <h1>Ryzon Services</h1>
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="nav-button" id="vbucks-btn">V-BUCKS</a>
+            <div class="divider"></div>
+            <a href="#" class="nav-button" id="gifts-btn">GIFTS</a>
+            <div class="divider"></div>
+            <a href="#" class="nav-button">CONTACT</a>
+        </nav>
+        <a href="https://discord.gg/ryzonservices" class="discord-icon" target="_blank">
+            <i class="fab fa-discord"></i>
+        </a>
+    </header>
+
+    <div class="intro">
+        <div class="intro-content">
+            <img src="https://imgs.search.brave.com/IRqklJGZMmG_-9zagAx6jp2pREydFgZXIQlQWoRT3fE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC83L2Ev/Yi84OTkxNi0xOTIw/eDEwODAtZGVza3Rv/cC0xMDgwcC1mb3J0/bml0ZS1iYWNrZ3Jv/dW5kLXBob3RvLmpw/Zw" alt="Intro Image" class="intro-image" loading="lazy">
+            <h1 class="intro-title">Fortnite V-Bucks met zeer snelle en veilige levering</h1>
+            <p class="intro-description">
+                Betaal niet te veel om je favoriete Fortnite skins te krijgen. Je hoeft geen honderden euro's uit te geven aan Fortnite V-Bucks om coole skins te hebben. We bieden ook snelle levering!
+            </p>
+            <button id="methods-button" class="methoden">Onze Methoden</button>
+        </div>
+    </div>
+
+
+    <div id="methods-overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-methods" class="close-button">&times;</button>
+            <h2>Onze Methoden</h2>
+    
+            <!-- Methode 1: V-Bucks Methode -->
+            <div class="method-option">
+                <div class="method-header" id="vbucks-method-header">
+                    <span class="method-title">V-Bucks Methode</span>
+                    <span class="chevron fas fa-chevron-down"></span>
+                </div>
+                <div class="method-description" id="vbucks-method-description">
+                    We gebruiken de veiligste en beste legale methode. We kopen de V-Bucks in via de officiële PlayStation Store waarbij er een factuur mee wordt geleverd (deze kan je altijd vragen aan ons ter bewijs). We kopen het legaal in met valuta's van andere landen, waardoor wij op deze manier winst ontvangen zodra jij iets bij ons koopt.
+                </div>
+            </div>
+    
+            <!-- Methode 2: Gift Methode -->
+            <div class="method-option">
+                <div class="method-header" id="gift-method-header">
+                    <span class="method-title">Gift Methode</span>
+                    <span class="chevron fas fa-chevron-down"></span>
+                </div>
+                <div class="method-description" id="gift-method-description">
+                    We gebruiken dezelfde V-Bucks Methode als hierboven aangegeven, maar dan op onze eigen account. Zodra je ons als vriend hebt, kunnen wij je items giften via onze account. Dit is eveneens legaal.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="divider">
+        <div class="divider-chevron-wrapper">
+            <i class="fa-solid fa-angles-down divider-chevron"></i>
+        </div>
+        <div class="divider-line">
+            <div class="divider-line-left"></div>
+            <div class="divider-text">Onze Services</div>
+            <div class="divider-line-right"></div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-image">
+            <img src="https://i.imgur.com/BqGG4Te.png" alt="VBucks Image" loading="lazy">
+        </div>
+        <div class="info-content">
+            <h2 class="info-title">Koop goedkope VBucks met veilige methoden</h2>
+            <div class="info-subsection">
+                <h3 class="info-subtitle">Item Shop Gifts</h3>
+                <p class="info-description">Niet alleen Fortnite VBucks, maar ook Item Shop Gifts. Hierbij moet je ons toevoegen als vriend (of wij jou), daarna zullen we je het item giften dat je hebt ingevoerd.</p>
+            </div>
+            <div class="info-subsection">
+                <h3 class="info-subtitle">Gegarandeerd een geweldige ervaring met ons</h3>
+                <p class="info-description">U krijgt gegarandeerd de beste prijzen van ons met veilige en zeer snelle levering.</p>
+            </div>
+            <div class="specific-buttons">
+                <button class="specific-button vbucks" id="info-vbucks-btn">Koop V-Bucks</button>
+                <button class="specific-button fn-gifts" id="info-fn-gifts-btn">Koop Gifts</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider-line" id="koop-vbucks-section">
+        <div class="divider-line-left"></div>
+        <div class="divider-text">Koop V-Bucks</div>
+        <div class="divider-line-right"></div>
+    </div>
+
+    <div class="vbucks-card-container">
+        <!-- 1000 V-Bucks Card -->
+        <div class="vbucks-card">
+            <img class="vbucks-card-img" src="https://i.imgur.com/utsNRPU.png" alt="1000 V-Bucks" loading="lazy">
+            <div class="vbucks-card-title">1,000 V-Bucks</div>
+            <div class="vbucks-description">
+                Krijg de V-Bucks op je eigen account of een pre-loaded account, naar keuze! Snelle en veilige levering gegarandeerd.
+            </div>
+            <div class="vbucks-price">€5.99</div>
+            <div class="specific-buttons">
+                <button class="specific-button buy">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 2800 V-Bucks Card -->
+        <div class="vbucks-card">
+            <img class="vbucks-card-img" src="https://i.imgur.com/oZ0ftAA.png" alt="2800 V-Bucks" loading="lazy">
+            <div class="vbucks-card-title">2,800 V-Bucks</div>
+            <div class="vbucks-description">
+                Krijg de V-Bucks op je eigen account of een pre-loaded account, naar keuze! Snelle en veilige levering gegarandeerd.
+            </div>
+            <div class="vbucks-price">€16.99</div>
+            <div class="specific-buttons">
+                <button class="specific-button buy">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 5000 V-Bucks Card -->
+        <div class="vbucks-card">
+            <img class="vbucks-card-img" src="https://i.imgur.com/nR4bd83.png" alt="5000 V-Bucks" loading="lazy">
+            <div class="vbucks-card-title">5,000 V-Bucks</div>
+            <div class="vbucks-description">
+                Krijg de V-Bucks op je eigen account of een pre-loaded account, naar keuze! Snelle en veilige levering gegarandeerd.
+            </div>
+            <div class="vbucks-price">€26.99</div>
+            <div class="specific-buttons">
+                <button class="specific-button buy">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 13500 V-Bucks Card -->
+        <div class="vbucks-card">
+            <img class="vbucks-card-img" src="https://i.imgur.com/gOXbpOD.png" alt="13500 V-Bucks" loading="lazy">
+            <div class="vbucks-card-title">13,500 V-Bucks</div>
+            <div class="vbucks-description">
+                Krijg de V-Bucks op je eigen account of een pre-loaded account, naar keuze! Snelle en veilige levering gegarandeerd.
+            </div>
+            <div class="vbucks-price">€64.99</div>
+            <div class="specific-buttons">
+                <button class="specific-button buy">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider-line" id="koop-gifts-section">
+        <div class="divider-line-left"></div>
+        <div class="divider-text">Koop Gifts</div>
+        <div class="divider-line-right"></div>
+    </div>
+
+    <div class="gift-form-container">
+        <div class="gift-form-card">
+            <!-- Gift Image -->
+            <div class="gift-image">
+                <img src="https://imgs.search.brave.com/YOpFq8z-rVlC86C9hXX57jv8CovEpiP-wK4lv0tFqAA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGlnaXRhbHRyZW5k/cy5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjAvMDQvMGRh/MzE5NjctMzNlNS00/NDEyLWE5ZTktMmQ2/OWEzODY4MGQyLmpw/ZWc_cmVzaXplPTEw/MDAsNjAwJnA9MQ" alt="Gift Image" class="gift-image-img">
+            </div>
+
+            <!-- V-Bucks Input Field -->
+            <div class="form-field">
+                <input type="number" id="vbucks-amount" class="input-field" placeholder="Hoeveel V-Bucks kost het item?" required min="0" max="20000" />
+                <label for="vbucks-amount" class="input-label">Hoeveel V-Bucks kost het item?</label>
+            </div>
+
+            <!-- Item name input -->
+            <div class="form-field">
+                <input type="text" id="item-name" class="input-field" placeholder="Naam van het item" required />
+                <label for="item-name" class="input-label">Naam van het item</label>
+            </div>
+
+            <!-- Epic Games name input -->
+            <div class="form-field">
+                <input type="text" id="epic-name" class="input-field" placeholder="Jouw Epic Games naam" required />
+                <label for="epic-name" class="input-label">Jouw Epic Games naam</label>
+            </div>
+
+            <!-- Add Button -->
+            <button class="add-btn" id="add-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+
+            <!-- Price display -->
+            <div class="price-display" id="price-display">Prijs: €0,00</div>
+
+            <!-- Checkbox for Epic Games name -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="epic-check" class="checkbox" />
+                <label for="epic-check" class="checkbox-label">
+                    <i id="checkbox-icon" class="fa fa-circle"></i>
+                    <span>Ik heb "JamalTyr" toegevoegd op Epic Games.</span>
+                </label>
+            </div>
+
+            <!-- Notification container -->
+            <div id="notification-container" aria-live="assertive"></div>
+
+            <!-- Action buttons -->
+            <div class="action-buttons">
+                <button id="buy-btn" class="action-button buy-btn" disabled>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+<!-- Contact Overlay -->
+<div id="contact-overlay" class="overlay hidden">
+    <div class="overlay-content">
+        <button id="close-contact" class="close-button">&times;</button>
+        <h2>Contacteer Ons</h2>
+        <form id="contact-form">
+            <!-- Email -->
+            <div class="form-field">
+                <input type="discordnaam" id="discordnaam" class="input-field" placeholder="Je Discord-naam" required>
+                <label for="discordnaam" class="input-label">Je Discord-Naam:</label>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-field">
+                <input type="text" id="subject" class="input-field" placeholder="Onderwerp" required>
+                <label for="subject" class="input-label">Onderwerp:</label>
+            </div>
+
+            <!-- Description -->
+            <div class="form-field">
+                <textarea id="description" class="input-field" rows="6" placeholder="Beschrijving" required></textarea>
+                <label for="description" class="input-label">Beschrijving:</label>
+            </div>
+
+            <!-- Optional: Phone Number -->
+            <div class="form-field">
+                <input type="tel" id="phone" class="input-field" placeholder="Telefoonnummer (optioneel)">
+                <label for="phone" class="input-label">Telefoonnummer (optioneel):</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="action-button">Verzenden</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script> <!-- Zorg ervoor dat dit onderaan je body staat -->
+</body>
+</html>
